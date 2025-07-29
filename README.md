@@ -9,7 +9,7 @@ This plugin is written for the Teensy 4.1 based open source board made by Phil B
 
 Plugin was tested with this board: https://www.aliexpress.com/item/1005004933766085.html
 
-> Note: The extension board must be set up to the same baudrate and async setting as the grblHAL board. Usually something like 19200 8N1, or 38400 8N1. This can be achieved by setting the `MODBUS_BAUDRATE` constant in _my_machine.h_. 
+> Note: The extension board must be set up to the same baudrate and async setting as the grblHAL board. Usually something like 19200 8N1, or 38400 8N1. This can be achieved by setting the `MODBUS_BAUDRATE` constant in _my_machine.h_.
 
 ### HOW TO INSTALL
 
@@ -31,7 +31,7 @@ Plugin was tested with this board: https://www.aliexpress.com/item/1005004933766
     #define MBIO_ENABLE 1
 ```
 5) If you want to enable debug messages of the plugin, add this line to _my_machine.h_:
-```	
+```
 	#define MBIO_DEBUG
 ```
 6) Compile and flash your machine and enjoy.
@@ -66,3 +66,7 @@ Format of **M102** is: `M102 D{0..247} P{1..9999} Q{0,1} R{0.0 .. 3600.0}`
 **Examples**
 - read DI2 on slave with address 2, wait for 1 up to 10 seconds: `M102 D2 P2 Q1 R10`
 - read DI6 on slave with address 10, wait for 0 up to 5.4 seconds: `M102 D10 P6 Q0 R5.4`
+
+
+###Changelog:###
+2025-07-29 PvdW Fixed compile errors, tested with grblHAL 20250724 
